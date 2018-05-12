@@ -104,10 +104,10 @@ drwxr-xr-x    3 admin root             0 May 10 11:02 /jffs/scripts
  
 - 스크립트를 1분마다 돌리는 cron 작업을 등록해 봅니다.  
 admin@RT-AC68U:/tmp/home/root# cru a routerstats "* * * * * /jffs/scripts/routerstats/routerstats.sh"  
-
+  
 - 다음 명령으로 cron 작업 내역을 확인할 수 있습니다.  
 admin@RT-AC68U:/tmp/home/root# cru l  
-* * * * * /jffs/scripts/routerstats/routerstats.sh #routerstats#  
+' * * * * * /jffs/scripts/routerstats/routerstats.sh #routerstats#  
 
 - 이제 공유기의 CPU, load, memory, 온도, 네트워크 트래픽, 네트워크 에러 등 지표가 NAS에 설치된 influxdb에 1분마다 저장되고 있습니다.
 - 그런데 이 cron 작업은 공유기가 재부팅 되면 남아 있지 않습니다.  
@@ -118,7 +118,7 @@ admin@RT-AC68U:/jffs/scripts# chmod a+x /jffs/scripts/init-start
 
 - 공유기 재부팅 후 'cru l' 명령으로 cron 작업 등록이 잘 되어 있는지 확인해 봅니다.  
 admin@RT-AC68U:/tmp/home/root# cru l  
-* * * * * /jffs/scripts/routerstats/routerstats.sh #routerstats#  
+' * * * * * /jffs/scripts/routerstats/routerstats.sh #routerstats#  
 
 
 4. grafana 설정
