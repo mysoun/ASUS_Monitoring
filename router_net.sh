@@ -13,7 +13,7 @@ echo $new_epoch > $old_epoch_file
 
 interval=`expr $new_epoch - $old_epoch` # seconds since last sample
 
-name="router_net2"
+name="net"
 columns="interface recv_kbps recv_errs recv_drop trans_kbps trans_errs trans_drop"
 
 if [ -f $new ]; then
