@@ -96,7 +96,7 @@ drwxr-xr-x    3 admin root             0 May 10 11:02 /jffs/scripts
 - 이제 수집 script를 설치할 준비가 되었습니다.  
 - 먼저 공유기 내에 /jffs/scripts/routerstats 디렉토리를 생성하고, 모든 sh 파일을 복사합니다.  
 - todb2.sh 파일을 vi로 열어보시면 4번째 줄에 자료를 저장할 influxdb의 주소를 지정하게 되어 있습니다.  
-  dbname="grafana_asus"    #위에서 생성해준  DB명
+  dbname="grafana_asus"    #위에서 생성해준  DB명  
   dbhost="my-nas-ip:8086"  
  
 - 스크립트를 1분마다 돌리는 cron 작업을 등록해 봅니다.  
