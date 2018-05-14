@@ -93,14 +93,11 @@ drwxr-xr-x    2 admin root             0 Feb 14  2017 /jffs/configs
 drwxr-xr-x    3 admin root             0 May 10 11:02 /jffs/scripts
 ...
 
-- 이제 수집 script를 설치할 준비가 되었습니다.
-- 먼저 공유기 내에 /jffs/scripts/routerstats 디렉토리를 생성하고, 첨부한 scripts_20180510.zip
-  파일의 압축을 풀어서 이 디렉토리에 복사합니다.
-  (파일 복사는 scp를 쓰시든지 usb를 통해 복사해 넣으시면 됩니다.)
-- 스크립트에서 보고하는 정보들에 대한 내용은 나중에 시간 많을 때 좀더 자세히 정리해 보겠습니다.
-- todb2.sh 파일을 vi로 열어보시면 4번째 줄에 자료를 저장할 influxdb의 주소를 지정하게 되어 있습니다.
-   
-  dbhost="my-nas-ip:8086"  
+- 이제 수집 script를 설치할 준비가 되었습니다.  
+- 먼저 공유기 내에 /jffs/scripts/routerstats 디렉토리를 생성하고, 모든 sh 파일을 복사합니다.  
+- todb2.sh 파일을 vi로 열어보시면 4번째 줄에 자료를 저장할 influxdb의 주소를 지정하게 되어 있습니다.  
+  dbname="grafana_asus"    #위에서 생성해준  DB명
+  dbhost="my-nas-ip:8086"  
  
 - 스크립트를 1분마다 돌리는 cron 작업을 등록해 봅니다.  
 admin@RT-AC68U:/tmp/home/root# cru a routerstats "* * * * * /jffs/scripts/routerstats/routerstats.sh"  
